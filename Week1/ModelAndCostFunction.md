@@ -39,13 +39,13 @@
   
   $J($ $\theta$<sub>$0$</sub>, $\theta$<sub>$1$</sub> $) =$ $\frac{1}{2m}$ $\sum_{i=0}^{m}$ $( h$<sub>$\theta$</sub> $( x$<sub>$i$</sub> $) - y$<sub>$i$</sub> $)$
 
-  In simpler terms, it is $\frac{1}{2} \bar{x}$ where $\bar{x}$ is the mean of the squares between $h$<sub>$\theta$</sub> $( x$<sub>$i$</sub> $) - y$<sub>$i$</sub>, or the difference between the predicted value and the actual value.
+  In simpler terms, it is $\frac{1}{2} \bar{x}$ where $\bar{x}$ is the mean of the squares between $h$<sub>$\theta$</sub> $( x$<sub>$i$</sub> $) - y$<sub>$i$</sub> , or the difference between the predicted value and the actual value.
 
-  The mean is halved as a convenience for the computation, the derivative of the square term will cancel ouy the $\frac{1}{2}$.
+  The mean is halved as a convenience for the computation, the derivative of the square term will cancel out the $\frac{1}{2}$.
 
-  ![Mean Square Error](images/MeanSquareError.png)
+![Mean Square Error](images/MeanSquareError.png)
   
-## Cost Function Intuition
+## Cost Function Intuition - Plotting Cost Function
 
 - Visually, a basic data set can be seen as points on a 2D graph with axis $x$ and $y$.
 
@@ -55,14 +55,35 @@
 
   For example, if $\theta$<sub>$1$</sub> $= 1$, then based on the hypothesis function the line would have a slope of $1$ and go through every point on the dataset
 
-  ![ZeroCostFunction](images/ZeroCostFunction.png)
+![ZeroCostFunction](images/ZeroCostFunction.png)
 
   Conversely, $\theta$<sub>$1$</sub> $= 0.5$, then based on the hypothesis function the line would have a slope of $0.5$ and $J($ $\theta$<sub>$1$</sub> $) = 0.58$
 
-  ![ZeroCostFunction](images/ZeroCostFunction3.png)
+![ZeroCostFunction](images/ZeroCostFunction3.png)
 
   If, we continue to plot more on the on the graph $J($ $\theta$<sub>$1$</sub> $)$, it will look like
 
-  ![ZeroCostFunction](images/ZeroCostFunction2.png)
+![ZeroCostFunction](images/ZeroCostFunction2.png)
 
   Finally, since we want to minimize the cost function, $J($ $\theta$<sub>$1$</sub> $)$, In this case $\theta$<sub>$1$</sub> $= 1$ is our global minimum
+
+Cost Function Intuition - Contour Graphs
+
+- A contour plot is a graph that contains many contour lines.
+  - A contour line of a two variable function has a constant value at all points of the same line
+
+- Picking any color line and continuing to following, you could expect to get the same value.
+  
+  For example, the 3 green points found on the green line below would have the same value for $J($ $\theta$<sub>$0$</sub> , $\theta$<sub>$1$</sub> $)$
+
+  The circle green x denotes the value of the cost function when $\theta$<sub>$0$</sub> $=800$ and $\theta$<sub>$1$</sub> $= -0.15$
+
+![ZeroCostFunction](images/ContourPlot.png)
+
+- Another example, when $\theta$<sub>$0$</sub> $=360$ and $\theta$<sub>$1$</sub> $= 0$, the contour plot gets closer to the center thus thus reducing the value of the cost function
+  
+![ZeroCostFunction](images/ContourPlot2.png)
+
+- If we take the previous hypothesis and positively increase the slope, then the contour plot is very close to the center, and the cost function is minimized as much as possible. The resulting parameters are $\theta$<sub>$0$</sub> $=250$ and $\theta$<sub>$1$</sub> $= 0.12$
+
+![ZeroCostFunction](images/ContourPlot3.png)
